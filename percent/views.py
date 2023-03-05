@@ -2,10 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def response(context):
-    return render(context, 'index.html')
-
-
 def index(request):
     if request.method == 'POST':
         number = int(request.POST.get('number', ''))
@@ -25,6 +21,3 @@ def index(request):
         return render(request, 'index.html', context)
     else:
         return render(request, 'index.html')
-    # return HttpResponse("successfully")
-
-
