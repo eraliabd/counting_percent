@@ -6,7 +6,7 @@ def response(context):
     return render(context, 'index.html')
 
 
-async def index(request):
+def index(request):
     if request.method == 'POST':
         number = int(request.POST.get('number', ''))
         percent = int(request.POST.get('percent', ''))
@@ -19,6 +19,7 @@ async def index(request):
             "percent_value": percent_value,
             "residual_value": residual_value,
             "value_increase": value_increase,
+            "number": number,
             "percent": percent
         }
         return render(request, 'index.html', context)
