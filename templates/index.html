@@ -9,31 +9,50 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-<div class="container mt-5">
-    <h1>Counting percent of number in Django</h1>
+<div class="container mt-4">
+    <h1>Calculate the percentage of a number</h1>
     <form action="" method="post">
         {% csrf_token %}
-        <div class="form-group mt-5">
+        <div class="form-group mt-4 w-10">
             <label for="input1">Enter a number</label>
-            <input type="number" name="number" class="form-control" id="input1">
+            <input type="number" name="number" placeholder="Number" class="form-control" id="input1" required>
         </div>
 
         <div class="form-group mt-3">
             <label for="input2">Enter percent</label>
-            <input type="number" name="percent" class="form-control" id="input2">
+            <input type="number" name="percent" placeholder="Percent" class="form-control" id="input2" required>
         </div>
         <button type="submit" class="btn btn-primary mt-2">Submit</button>
     </form>
 
-    <div class="card mt-4 p-5">
-        <div class="form-group mt-3">
-            <label for="input3">Result</label><br>
-            <button type="submit" class="btn btn-success mt-2">Submit</button>
-        </div>
-        <div class="form-group mt-3">
-            <label for="input3">Percentage difference</label><br>
-            <button type="submit" class="btn btn-success mt-2">Submit</button>
-        </div>
+    <div class="card mt-4 p-3">
+        {% if percent %}
+            <div class="form-group mt-3">
+                <label for="input3">{{ percent }} percent of number</label><br>
+                <p style="width: 300px;" class="btn btn-success mt-2">{{ percent_value }}</p>
+            </div>
+            <div class="form-group mt-3">
+                <label for="input3">{{ percent }}% Percentage difference</label><br>
+                <p style="width: 300px;" class="btn btn-success mt-2">{{ residual_value }}</p>
+            </div>
+            <div class="form-group mt-3">
+                <label for="input3">{{ percent }}% Percentage increase</label><br>
+                <p style="width: 300px;" class="btn btn-success mt-2">{{ value_increase }}</p>
+            </div>
+        {% else %}
+            <div class="form-group mt-3">
+                <label for="input3">Percent of number</label><br>
+                <p style="width: 300px;" class="btn btn-success mt-2">0</p>
+            </div>
+            <div class="form-group mt-3">
+                <label for="input3">Percentage difference</label><br>
+                <p style="width: 300px;" class="btn btn-success mt-2">0</p>
+            </div>
+            <div class="form-group mt-3">
+                <label for="input3">Percentage increase</label><br>
+                <p style="width: 300px;" class="btn btn-success mt-2">0</p>
+            </div>
+        {% endif %}
     </div>
 
 </div>
