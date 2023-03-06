@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Percent Counting{% endblock %}
+{% block content %}
+    <div class="container-sm mt-4">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <label for="formFileLg" class="form-label">Docs to PDF</label>
+                <input name="docs" class="form-control form-control-lg" id="formFileLg" type="file">
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Convert</button>
+        </form>
+        {% if pdf_file %}
+            <div class="download">
+                <a class="btn btn-success mt-2" href="{{ pdf_file }}" target="_blank">Download</a>
+            </div>
+        {% else %}
+            <div class="download">
+                <a class="btn btn-success mt-2" href="#" target="_blank">Download</a>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

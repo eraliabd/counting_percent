@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import index
+from .views import index, home, converter
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', home, name='home'),
+    path('percent/', index, name='percent'),
+    path('convert/', converter, name='convert'),
 ]
