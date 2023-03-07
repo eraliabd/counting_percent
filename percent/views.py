@@ -29,6 +29,7 @@ def index(request):
             "number": number,
             "percent": percent
         }
+
         return render(request, 'index.html', context)
     else:
         return render(request, 'index.html')
