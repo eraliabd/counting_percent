@@ -31,8 +31,8 @@ DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS = ['*']
 
-if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = ['https://calculate.up.railway.app']
+# if not DEBUG:
+CSRF_TRUSTED_ORIGINS = ['https://calculate.up.railway.app']
 
 
 # Application definition
