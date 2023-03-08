@@ -26,10 +26,10 @@ while i <= n:
     i += 1
     print()
 
-s = int()
-while n:
-    val = n % 10
-    s += val
-
-    n //= 10
-print("Sum: ", s)
+# s = int()
+# while n:
+#     val = n % 10
+#     s += val
+#
+#     n //= 10
+# print("Sum: ", s)
